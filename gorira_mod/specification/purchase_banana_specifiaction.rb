@@ -11,7 +11,7 @@ module GoriraMod
     def is_satisfied_by(gorira)
       # - 11月以降なら、全てのゴリラがバナナを購入可能
       return true if @current_date.month >= 11
-      # - 性別がメスでありポジションが一般である
+      # - 性別がメスでありポジションが一般スタッフである
       return true if female_and_common?(gorira)
       # - 性別がオスでありポジションが社長である
       return true if male_and_president?(gorira)
