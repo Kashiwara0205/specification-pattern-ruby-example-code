@@ -17,23 +17,17 @@ gorira_3 =
                      sex: Const::GoriraMod::Sex::MALE, 
                      position: Const::GoriraMod::Position::PESIDENT)
 
-
-puts "ごりお"
-gorira_1.purchase_banana()
-puts ""
-
-puts "ごりみ"
-gorira_2.purchase_banana()
-puts ""
-
-puts "ごりすけ"
-gorira_3.purchase_banana()
-puts ""
-
-puts "------------------------"
-puts "購入できたゴリラを以下に出力"
 goriras = [gorira_1, gorira_2, gorira_3]
 container = GoriraMod::GoriraContainer.new(goriras)
+
+if container.has_can_purchase_gorira?
+  puts "バナナを購入できたゴリラがいます！"
+end
+
+puts "------------------------"
+
+puts "購入できたゴリラを以下に出力"
+
 container.select_can_purchase_banana_gorira().each do |e|
   puts e.name
 end
